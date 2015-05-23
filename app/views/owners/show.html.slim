@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @owner.name
+p
+  strong Address:
+  = @owner.address
+p
+  strong Phonenumber:
+  = @owner.phonenumber
+
+= link_to 'Edit', edit_owner_path(@owner)
+'|
+= link_to 'Back', owners_path

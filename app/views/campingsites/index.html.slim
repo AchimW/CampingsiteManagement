@@ -1,0 +1,25 @@
+h1 Listing campingsites
+
+table
+  thead
+    tr
+      th Name
+      th Address
+      th Features
+      th
+      th
+      th
+
+  tbody
+    - @campingsites.each do |campingsite|
+      tr
+        td = campingsite.name
+        td = campingsite.address
+        td = campingsite.features
+        td = link_to 'Show', campingsite
+        td = link_to 'Edit', edit_campingsite_path(campingsite)
+        td = link_to 'Destroy', campingsite, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Campingsite', new_campingsite_path

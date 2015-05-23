@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @campingsite.name
+p
+  strong Address:
+  = @campingsite.address
+p
+  strong Features:
+  = @campingsite.features
+
+= link_to 'Edit', edit_campingsite_path(@campingsite)
+'|
+= link_to 'Back', campingsites_path

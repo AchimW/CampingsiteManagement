@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Number:
+  = @pitch.number
+p
+  strong Size:
+  = @pitch.size
+p
+  strong Used:
+  = @pitch.used
+p
+  strong Features:
+  = @pitch.features
+p
+  strong Campingsite:
+  = @pitch.campingsite
+
+= link_to 'Edit', edit_pitch_path(@pitch)
+'|
+= link_to 'Back', pitches_path
