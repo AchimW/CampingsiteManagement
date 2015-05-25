@@ -22,11 +22,17 @@ table
   thead
     tr
       th Pitches
+      th
 
   tbody
     - @campingsite.pitches.each do |pitch|
       tr
         td = pitch.number
+        td
+          - if pitch.used
+            p ist vermietet
+          - else
+            = button_to 'Stellplatz vermieten', rent_pitch_path(id: pitch.id), :method => :get
 br
 
 = link_to 'Edit', edit_campingsite_path(@campingsite)
