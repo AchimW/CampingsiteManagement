@@ -15,4 +15,8 @@
   .field
     = f.label :features
     = f.text_area :features
+  .field
+    = f.label :owners
+    = select_tag 'campingsite[owner_ids][]', options_from_collection_for_select(Owner.all, 'id', 'name'), multiple: true
+
   .actions = f.submit

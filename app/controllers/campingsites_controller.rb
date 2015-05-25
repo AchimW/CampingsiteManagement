@@ -69,6 +69,6 @@ class CampingsitesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campingsite_params
-      params.require(:campingsite).permit(:name, :address, :features)
+      params.require(:campingsite).permit(:name, :address, :features, pitch_ids: [], owner_ids: [])
     end
 end

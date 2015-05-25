@@ -20,5 +20,5 @@
     = f.text_area :features
   .field
     = f.label :campingsite
-    = f.text_field :campingsite
+    = f.select 'campingsite_id', options_from_collection_for_select(Campingsite.all, 'id', 'name')
   .actions = f.submit

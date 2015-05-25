@@ -6,6 +6,7 @@ table
       th Name
       th Address
       th Features
+      th Owners
       th
       th
       th
@@ -16,6 +17,10 @@ table
         td = campingsite.name
         td = campingsite.address
         td = campingsite.features
+        td
+          - campingsite.owners.each do |owner|
+            = owner.name
+          br
         td = link_to 'Show', campingsite
         td = link_to 'Edit', edit_campingsite_path(campingsite)
         td = link_to 'Destroy', campingsite, data: {:confirm => 'Are you sure?'}, :method => :delete

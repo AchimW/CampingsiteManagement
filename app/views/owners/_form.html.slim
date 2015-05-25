@@ -15,4 +15,7 @@
   .field
     = f.label :phonenumber
     = f.text_field :phonenumber
+  .field
+    = f.label :campingsites
+    = select_tag 'owner[campingsite_ids][]', options_from_collection_for_select(Campingsite.all, 'id', 'name'), multiple: true
   .actions = f.submit

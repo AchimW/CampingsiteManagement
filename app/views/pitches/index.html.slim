@@ -19,7 +19,7 @@ table
         td = pitch.size
         td = pitch.used
         td = pitch.features
-        td = pitch.campingsite
+        td = pitch.campingsite.name
         td = link_to 'Show', pitch
         td = link_to 'Edit', edit_pitch_path(pitch)
         td = link_to 'Destroy', pitch, data: {:confirm => 'Are you sure?'}, :method => :delete

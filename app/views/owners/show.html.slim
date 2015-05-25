@@ -9,6 +9,16 @@ p
 p
   strong Phonenumber:
   = @owner.phonenumber
+table
+  thead
+    tr
+      th Campingsites
+
+  tbody
+    - @owner.campingsites.each do |campingsite|
+      tr
+        td = campingsite.name
+br
 
 = link_to 'Edit', edit_owner_path(@owner)
 '|

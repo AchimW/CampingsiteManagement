@@ -9,6 +9,25 @@ p
 p
   strong Features:
   = @campingsite.features
+table
+  thead
+    tr
+      th Owners
+
+  tbody
+    - @campingsite.owners.each do |owner|
+      tr
+        td = owner.name
+table
+  thead
+    tr
+      th Pitches
+
+  tbody
+    - @campingsite.pitches.each do |pitch|
+      tr
+        td = pitch.number
+br
 
 = link_to 'Edit', edit_campingsite_path(@campingsite)
 '|
