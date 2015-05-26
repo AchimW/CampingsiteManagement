@@ -21,6 +21,18 @@ class PitchesController < ApplicationController
   def edit
   end
 
+  # GET /pitches/1/rent
+  def rent
+    @pitch = Pitch.find(params[:id])
+    @pitch.setused
+
+    respond_to do |format|
+      if @pitch.update(used: @pitch.used)
+        format.html { redirect_to @pitch.campingsite, notice: 'Pitch was successfully rent.' }
+      end
+    end
+  end
+
   # POST /pitches
   # POST /pitches.json
   def create
@@ -50,6 +62,8 @@ class PitchesController < ApplicationController
       end
     end
   end
+
+
 
   # DELETE /pitches/1
   # DELETE /pitches/1.json

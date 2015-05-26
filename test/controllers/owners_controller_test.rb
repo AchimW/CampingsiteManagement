@@ -2,7 +2,7 @@ require 'test_helper'
 
 class OwnersControllerTest < ActionController::TestCase
   setup do
-    @owner = owners(:one)
+    @owner = owners(:personA)
   end
 
   test "should get index" do
@@ -18,7 +18,7 @@ class OwnersControllerTest < ActionController::TestCase
 
   test "should create owner" do
     assert_difference('Owner.count') do
-      post :create, owner: { address: @owner.address, name: @owner.name, phonenumber: @owner.phonenumber }
+      post :create, owner: { address: @owner.address, name: @owner.name, phonenumber: @owner.phonenumber}
     end
 
     assert_redirected_to owner_path(assigns(:owner))

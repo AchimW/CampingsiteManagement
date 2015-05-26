@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  address: MyString
-  phonenumber: MyString
+personA:
+  name: PersonA
+  address: Musterstraße
+  phonenumber: 2541/352
+  campingsites: one, two
 
-two:
-  name: MyString
-  address: MyString
-  phonenumber: MyString
+personB:
+  name: PersonB
+  address: Millibandstraße
+  phonenumber: 123456/8574
+  campingsites: one

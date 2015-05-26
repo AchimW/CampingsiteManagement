@@ -1,6 +1,8 @@
 class Pitch < ActiveRecord::Base
   belongs_to :campingsite
 
+  validates_presence_of :campingsite
+
   def setused
     self.used = true;
   end

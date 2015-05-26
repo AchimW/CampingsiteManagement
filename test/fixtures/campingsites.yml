@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  address: MyString
-  features: MyText
+  name: CampingsiteA
+  address: Frankreich
+  features: Schöner Campingplatz mit Aussicht auf den Eiffelturm
+  owners: personA, personB
+ # pitches: one, two
 
 two:
-  name: MyString
-  address: MyString
-  features: MyText
+  name: CampingsiteB
+  address: England
+  features: Campingplatz im herrlich kühlen England
+  owners: personB
+ # pitches: three
