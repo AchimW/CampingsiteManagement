@@ -20,3 +20,10 @@ three:
   used: false
   features: Großer Stellplatz mit Hütte
   campingsite: two
+
+four:
+  number: 4
+  size: 10.5
+  used: true
+  features: Kleinerer Stellplatz, der gerade besetzt ist
+  campingsite: one

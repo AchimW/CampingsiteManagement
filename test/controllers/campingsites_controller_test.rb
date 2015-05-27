@@ -46,4 +46,36 @@ class CampingsitesControllerTest < ActionController::TestCase
 
     assert_redirected_to campingsites_path
   end
+
+  test "name can't be blank" do
+    post :create, campingsite: { name: nil, address: @campingsite.address, features: @campingsite.features }
+    assert_response :ok
+    assert_select "#error_explanation ul" do
+      assert_select "li", "Name can't be blank"
+    end
+  end
+
+  test "address can't be blank" do
+    post :create, campingsite: { name: @campingsite.name, address: nil, features: @campingsite.features }
+    assert_response :ok
+    assert_select "#error_explanation ul" do
+      assert_select "li", "Address can't be blank"
+    end
+  end
+
+  test "features can't be blank" do
+    post :create, campingsite: { name: @campingsite.name, address: @campingsite.address, features: nil}
+    assert_response :ok
+    assert_select "#error_explanation ul" do
+      assert_select "li", "Features can't be blank"
+    end
+  end
+
+  test "no update without a name" do
+    post :update, id: @campingsite, campingsite: { name: nil }
+    assert_response :ok
+    assert_select "#error_explanation ul" do
+      assert_select "li", "Name can't be blank"
+    end
+  end
 end
