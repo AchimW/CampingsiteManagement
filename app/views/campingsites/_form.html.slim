@@ -1,4 +1,4 @@
-= form_for @campingsite do |f|
+= form_for @campingsite, html: { class: 'form' } do |f|
   - if @campingsite.errors.any?
     #error_explanation
       h2 = "#{pluralize(@campingsite.errors.count, "error")} prohibited this campingsite from being saved:"
@@ -6,17 +6,17 @@
         - @campingsite.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .field.form-group
     = f.label :name
-    = f.text_field :name
-  .field
+    = f.text_field :name, class: 'form-control'
+  .field.form-group
     = f.label :address
-    = f.text_field :address
-  .field
+    = f.text_field :address, class: 'form-control'
+  .field.form-group
     = f.label :features
-    = f.text_area :features
-  .field
+    = f.text_area :features, class: 'form-control'
+  .field.form-group
     = f.label :owners
-    = select_tag 'campingsite[owner_ids][]', options_from_collection_for_select(Owner.all, 'id', 'name'), multiple: true
+    = select_tag 'campingsite[owner_ids][]', options_from_collection_for_select(Owner.all, 'id', 'name'), multiple: true, class: 'form-control'
 
   .actions = f.submit

@@ -1,15 +1,15 @@
 p#notice = notice
 
-p
+p.form-group
   strong Name:
   = @campingsite.name
-p
+p.form-group
   strong Address:
   = @campingsite.address
-p
+p.form-group
   strong Features:
   = @campingsite.features
-table
+table.table.table-striped
   thead
     tr
       th Owners
@@ -18,7 +18,7 @@ table
     - @campingsite.owners.each do |owner|
       tr
         td = owner.name
-table
+table.table.table-striped
   thead
     tr
       th Pitches
@@ -35,6 +35,6 @@ table
             = button_to 'Stellplatz vermieten', rent_pitch_path(id: pitch.id), :method => :get
 br
 
-= link_to 'Edit', edit_campingsite_path(@campingsite)
+= link_to 'Edit', edit_campingsite_path(@campingsite), class: 'btn btn-warning'
 '|
-= link_to 'Back', campingsites_path
+= link_to 'Back', campingsites_path, class: 'btn btn-default'

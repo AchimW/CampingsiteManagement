@@ -9,7 +9,7 @@ p
 p
   strong Phonenumber:
   = @owner.phonenumber
-table
+table.table.table-striped
   thead
     tr
       th Campingsites
@@ -20,6 +20,6 @@ table
         td = campingsite.name
 br
 
-= link_to 'Edit', edit_owner_path(@owner)
+= link_to 'Edit', edit_owner_path(@owner), class: 'btn btn-warning'
 '|
-= link_to 'Back', owners_path
+= link_to 'Back', owners_path, class: 'btn btn-default'
