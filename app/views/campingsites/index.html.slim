@@ -1,6 +1,6 @@
 h1 Listing campingsites
 
-table
+table.table.table-striped
   thead
     tr
       th Name
@@ -21,10 +21,10 @@ table
           - campingsite.owners.each do |owner|
             = owner.name
           br
-        td = link_to 'Show', campingsite
-        td = link_to 'Edit', edit_campingsite_path(campingsite)
-        td = link_to 'Destroy', campingsite, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Show', campingsite, class: 'btn btn-sm btn-info'
+        td = link_to 'Edit', edit_campingsite_path(campingsite), class: 'btn btn-sm btn-warning'
+        td = link_to 'Destroy', campingsite, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-sm btn-danger'
 
 br
 
-= link_to 'New Campingsite', new_campingsite_path
+= link_to 'New Campingsite', new_campingsite_path, class: 'btn btn-success'

@@ -1,4 +1,4 @@
-= form_for @pitch do |f|
+= form_for @pitch, html: { class: 'form' } do |f|
   - if @pitch.errors.any?
     #error_explanation
       h2 = "#{pluralize(@pitch.errors.count, "error")} prohibited this pitch from being saved:"
@@ -6,19 +6,19 @@
         - @pitch.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .field.form-group
     = f.label :number
-    = f.number_field :number
-  .field
+    = f.number_field :number, class: 'form-control'
+  .form-group
     = f.label :size
-    = f.text_field :size
-  .field
+    = f.text_field :size, class: 'form-control'
+  .form-group
     = f.label :used
-    = f.check_box :used
-  .field
+    = f.check_box :used, class: 'checkbox-inline'
+  .form-group
     = f.label :features
-    = f.text_area :features
-  .field
+    = f.text_area :features, class: 'form-control'
+  .form-group
     = f.label :campingsite
-    = f.select 'campingsite_id', options_from_collection_for_select(Campingsite.all, 'id', 'name')
+    = f.select 'campingsite_id', options_from_collection_for_select(Campingsite.all, 'id', 'name'), class: 'form-control'
   .actions = f.submit

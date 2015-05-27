@@ -8,7 +8,15 @@
 </head>
 <body>
 
+<nav id="navigation" class="container">
+<%= link_to 'Campingsites', campingsites_path, class: 'btn btn-default' %>
+<%= link_to 'Owners', owners_path, class: 'btn btn-default' %>
+<%= link_to 'Pitches', pitches_path, class: 'btn btn-default' %>
+</nav>
+
+<div id="main-container" class="container">
 <%= yield %>
+</div>
 
 </body>
 </html>

@@ -1,21 +1,22 @@
 p#notice = notice
 
-p
+p.form-group
   strong Number:
   = @pitch.number
-p
+p.form-group
   strong Size:
   = @pitch.size
-p
+p.form-group
   strong Used:
   = @pitch.used
-p
+p.form-group
   strong Features:
   = @pitch.features
-p
+p.form-group
   strong Campingsite:
   = @pitch.campingsite.name
 
-= link_to 'Edit', edit_pitch_path(@pitch)
+= link_to 'Edit', edit_pitch_path(@pitch), class: 'btn btn-warning'
 '|
-= link_to 'Back', pitches_path
+= link_to 'Back', pitches_path, class: 'btn btn-default'
+

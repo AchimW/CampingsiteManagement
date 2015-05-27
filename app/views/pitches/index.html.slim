@@ -1,6 +1,6 @@
 h1 Listing pitches
 
-table
+table.table.table-striped
   thead
     tr
       th Number
@@ -20,10 +20,10 @@ table
         td = pitch.used
         td = pitch.features
         td = pitch.campingsite.name
-        td = link_to 'Show', pitch
-        td = link_to 'Edit', edit_pitch_path(pitch)
-        td = link_to 'Destroy', pitch, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Show', pitch, class: 'btn btn-sm btn-info'
+        td = link_to 'Edit', edit_pitch_path(pitch), class: 'btn btn-sm btn-warning'
+        td = link_to 'Destroy', pitch, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-sm btn-danger'
 
 br
 
-= link_to 'New Pitch', new_pitch_path
+= link_to 'New Pitch', new_pitch_path, class: 'btn btn-success'
