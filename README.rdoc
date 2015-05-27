@@ -24,4 +24,9 @@ Owner
     - phonenumber : string
     - hat beliebig viele Campingplätze
 
+ACHTUNG
+Damit die Tests durchlaufen, muss node.js auf dem Rechner installiert werden. Ansonsten kommt die Fehlermeldung "Error: Current ExecJS runtime does't support ES5. Please install node.js". Der Fehler trat unter Windows 8 auf, betraf aber nur die Tests. Das Projekt ist ansonsten lauffähig.
+- http://stackoverflow.com/questions/28130096/how-can-i-fix-a-runtime-error-for-a-ruby-on-rails-app-using-a-windows-operating
+- http://stackoverflow.com/questions/28571986/application-css-scss-causing-issue-with-rails-4
+
 
